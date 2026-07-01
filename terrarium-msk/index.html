@@ -1,12 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>TERRARIUM-MSK Premium Upgrade</title>    
+    <meta name="description" content="Эксклюзивные премиальные террариумы на заказ в Москве. Ручная работа, индивидуальный дизайн, полный цикл от эскиза до установки." />
+    <meta name="keywords" content="террариум, вивариум, заказ, Москва, премиум, ручная работа" />
+    <meta name="author" content="TERRARIUM-MSK" />
+    <meta property="og:title" content="TERRARIUM-MSK - Премиальные террариумы на заказ" />
+    <meta property="og:description" content="Эксклюзивные террариумы и вивариумы на заказ в Москве. Воплощаем ваши идеи в жизнь." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/manus-storage/hero_terrarium_9aec1023.png" />
+    <meta name="theme-color" content="#1a3a2a" />
+    
+    <title>TERRARIUM-MSK - Премиальные террариумы на заказ в Москве</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,10 +25,22 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    
+    <!-- Analytics script (loads only if env vars are set) -->
+    <script>
+      (function() {
+        const endpoint = import.meta?.env?.VITE_ANALYTICS_ENDPOINT;
+        const websiteId = import.meta?.env?.VITE_ANALYTICS_WEBSITE_ID;
+        
+        if (endpoint && websiteId) {
+          const script = document.createElement('script');
+          script.defer = true;
+          script.src = `${endpoint}/umami`;
+          script.dataset.websiteId = websiteId;
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
   </body>
 
 </html>
